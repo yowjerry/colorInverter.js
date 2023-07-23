@@ -1,0 +1,31 @@
+<!-- HTML content -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add any necessary styles here -->
+</head>
+<body>
+    <!-- Your HTML content goes here -->
+</body>
+<script>
+    function changeColors(x, y, z, k) {
+        // Get all elements in the document
+        const elements = document.querySelectorAll('*');
+
+        // Loop through each element and check if it matches the given criteria
+        elements.forEach(element => {
+            const computedStyle = getComputedStyle(element);
+
+            // Check if the element has background color 'x' and text color 'y'
+            if (computedStyle.backgroundColor === x && computedStyle.color === y) {
+                // Change the color to 'z' and background color to 'k'
+                element.style.color = z;
+                element.style.backgroundColor = k;
+            }
+        });
+    }
+
+    // Call the function with your desired colors as arguments
+    changeColors('oldBackgroundColor', 'oldTextColor', 'newTextColor', 'newBackgroundColor');
+</script>
+</html>
